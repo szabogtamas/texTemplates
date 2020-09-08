@@ -25,6 +25,9 @@ def hspace(n):
 def vspace(n):
     return "\\vspace{" + n + "}"
 
+def input(n):
+    return "\n\\input{" + n + "}\n"
+
 
 def figure_fullwidth(path, caption):
     block = (
