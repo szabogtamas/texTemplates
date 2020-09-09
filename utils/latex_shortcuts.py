@@ -32,9 +32,26 @@ def input(n):
 def figure_fullwidth(path, caption):
     block = (
         """
+    \\begin{center}
+    \\begin{figure}[!htb]
+        \\caption{"""
+        + caption
+        + """}
+        \\includegraphics[width=.8\\textwidth]{"""
+        + path
+        + """}
+    \\end{figure}
+    \\end{center}
+    """
+    )
+    return block
+
+def figure_squeeze(path, caption):
+    block = (
+        """
     \\hspace{-0.7in}
     \\begin{center}
-    \\begin{figure}[ht!]
+    \\begin{figure}[!htb]
         \\caption{"""
         + caption
         + """}
