@@ -2,16 +2,16 @@
 # -*- coding: utf-8 -*-
 
 
-def section():
-    return "\\section"
+def section(s):
+    return "\n\\section{" + s + "}\n"
 
 
 def par():
-    return "\\par"
+    return "\\par\n"
 
 
 def clearpage():
-    return "\\clearpage"
+    return "\\clearpage\n"
 
 
 def centering():
