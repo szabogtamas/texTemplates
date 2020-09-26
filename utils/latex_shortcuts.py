@@ -25,6 +25,7 @@ def hspace(n):
 def vspace(n):
     return "\\vspace{" + n + "}"
 
+
 def input(n):
     return "\n\\input{" + n + "}\n"
 
@@ -37,7 +38,7 @@ def figure_fullwidth(path, caption):
         \\caption{"""
         + caption
         + """}
-        \\includegraphics[width=.8\\textwidth]{"""
+        \\includegraphics[width=\\textwidth]{"""
         + path
         + """}
     \\end{figure}
@@ -45,6 +46,7 @@ def figure_fullwidth(path, caption):
     """
     )
     return block
+
 
 def figure_squeeze(path, caption):
     block = (
