@@ -3,7 +3,18 @@
 
 
 def section(s):
-    return "\n\\section{" + s + "}\n"
+    return "\n\\section*{" + s + "}\n"
+
+
+def hiddenToc(s):
+    return (
+        """
+    \n\\section*{}
+    \\addcontentsline{toc}{section}{"""
+        + s
+        + """}
+    """
+    )
 
 
 def par():
