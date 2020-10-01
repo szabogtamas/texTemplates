@@ -13,6 +13,7 @@ def hiddenToc(s):
     \\addcontentsline{toc}{section}{"""
         + s
         + """}
+    \\vspace{-4em}
     """
     )
 
