@@ -18,6 +18,10 @@ def hiddenToc(s):
     )
 
 
+def cite(b):
+    return "\\cite{" + b + "} "
+
+
 def par():
     return "\\par\n"
 
@@ -42,7 +46,7 @@ def input(n):
     return "\n\\input{" + n + "}\n"
 
 
-def figure_fullwidth(path, caption):
+def figure_fullwidth(path, caption=""):
     block = (
         """
     \\begin{center}
@@ -60,7 +64,7 @@ def figure_fullwidth(path, caption):
     return block
 
 
-def figure_squeeze(path, caption):
+def figure_squeeze(path, caption=""):
     block = (
         """
     \\hspace{-0.7in}
@@ -79,7 +83,7 @@ def figure_squeeze(path, caption):
     return block
 
 
-def figure_twopanel(path1, path2, caption1, caption2):
+def figure_twopanel(path1, path2, caption1="", caption2=""):
     block = (
         """
     \\begin{figure}[ht!]
