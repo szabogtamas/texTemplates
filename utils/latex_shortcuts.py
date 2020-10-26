@@ -55,7 +55,9 @@ def figure_fullwidth(path, caption=""):
         + caption
         + """}
         \\includegraphics[width=\\textwidth]{"""
+        + '"'
         + path
+        + '"'
         + """}
     \\end{figure}
     \\end{center}
