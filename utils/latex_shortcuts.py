@@ -47,6 +47,7 @@ def input(n):
 
 
 def figure_fullwidth(path, caption=""):
+    path = path.split(".")
     block = (
         """
     \\begin{center}
@@ -54,10 +55,10 @@ def figure_fullwidth(path, caption=""):
         \\caption{"""
         + caption
         + """}
-        \\includegraphics[width=\\textwidth]{"""
-        + '"'
-        + path
-        + '"'
+        \\includegraphics[width=\\textwidth]{{"""
+        + "".join(path[:-1])
+        + "}."
+        + path[-1]
         + """}
     \\end{figure}
     \\end{center}
