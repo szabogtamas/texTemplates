@@ -68,6 +68,7 @@ def figure_fullwidth(path, caption=""):
 
 
 def figure_squeeze(path, caption=""):
+    path = path.split(".")
     block = (
         """
     \\hspace{-0.7in}
@@ -76,8 +77,10 @@ def figure_squeeze(path, caption=""):
         \\caption{"""
         + caption
         + """}
-        \\includegraphics[width=.7\\textwidth]{"""
-        + path
+        \\includegraphics[width=.7\\textwidth]{{"""
+        + "".join(path[:-1])
+        + "}."
+        + path[-1]
         + """}
     \\end{figure}
     \\end{center}
@@ -87,14 +90,18 @@ def figure_squeeze(path, caption=""):
 
 
 def figure_twopanel(path1, path2, caption1="", caption2=""):
+    path1 = path1.split(".")
+    path2 = path2.split(".")
     block = (
         """
     \\begin{figure}[ht!]
     \\centering
     \\begin{subfigure}{.5\\textwidth}
         \\centering
-        \\includegraphics[width=.8\\linewidth]{"""
-        + path1
+        \\includegraphics[width=.8\\linewidth]{{"""
+        + "".join(path1[:-1])
+        + "}."
+        + path1[-1]
         + """}
         \\caption{"""
         + caption1
@@ -102,8 +109,10 @@ def figure_twopanel(path1, path2, caption1="", caption2=""):
     \\end{subfigure}%
     \\begin{subfigure}{.5\\textwidth}
         \\centering
-        \\includegraphics[width=.8\\linewidth]{"""
-        + path2
+        \\includegraphics[width=.8\\linewidth]{{"""
+        + "".join(path2[:-1])
+        + "}."
+        + path2[-1]
         + """}
         \\caption{"""
         + caption1
