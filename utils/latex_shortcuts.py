@@ -71,13 +71,13 @@ def figure_squeeze(path, caption=""):
     path = path.split(".")
     block = (
         """
-    \\hspace{-0.7in}
+    \\hspace{0.5in}
     \\begin{center}
     \\begin{figure}[!htb]
         \\caption{"""
         + caption
         + """}
-        \\includegraphics[width=.7\\textwidth]{{"""
+        \\includegraphics[width=.8\\textwidth]{{"""
         + "".join(path[:-1])
         + "}."
         + path[-1]
