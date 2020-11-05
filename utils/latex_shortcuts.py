@@ -45,6 +45,13 @@ def vspace(n):
 def input(n):
     return "\n\\input{" + n + "}\n"
 
+def link(url, text=None):
+    if text is None:
+        s = "\\url{"+url+"}"
+    else:
+        s = "\href{"+url+"}{"+text+"}"
+    return s
+
 
 def figure_fullwidth(path, caption=""):
     path = path.split(".")
