@@ -2,9 +2,14 @@
 # -*- coding: utf-8 -*-
 
 
+def chapter(s):
+    return "\n\\chapter*{" + s + "}\n"
+
 def section(s):
     return "\n\\section*{" + s + "}\n"
 
+def subsection(s):
+    return "\n\\subsection*{" + s + "}\n"
 
 def hiddenToc(s):
     return (
