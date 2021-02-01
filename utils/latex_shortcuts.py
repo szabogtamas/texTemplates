@@ -2,25 +2,31 @@
 # -*- coding: utf-8 -*-
 
 
-def chapter(s):
-    return "\n\\chapter{" + s + "}\n"
+def chapter(s, numbered=True):
+    if numbered:
+        s = "\n\\chapter{" + s + "}\n"
+    else:
+        s = "\n\\chapter*{" + s + "}\n"
+    return s
 
-def section(s):
-    return "\n\\section{" + s + "}\n"
 
-def subsection(s):
-    return "\n\\subsection{" + s + "}\n"
+def section(s, numbered=True):
+    if numbered:
+        s = "\n\\section{" + s + "}\n"
+    else:
+        s = "\n\\section*{" + s + "}\n"
+    return s
 
-def nchapter(s):
-    return "\n\\chapter*{" + s + "}\n"
 
-def nsection(s):
-    return "\n\\section*{" + s + "}\n"
+def subsection(s, numbered=True):
+    if numbered:
+        s = "\n\\subsection{" + s + "}\n"
+    else:
+        s = "\n\\subsection*{" + s + "}\n"
+    return s
 
-def nsubsection(s):
-    return "\n\\subsection*{" + s + "}\n"
 
-def hiddenToc(s):
+def hiddenToc(s, numbered=True):
     return (
         """
     \n\\section*{}
@@ -59,11 +65,12 @@ def vspace(n):
 def input(n):
     return "\n\\input{" + n + "}\n"
 
+
 def link(url, text=None):
     if text is None:
-        s = "\\url{"+url+"}"
+        s = "\\url{" + url + "}"
     else:
-        s = "\href{"+url+"}{"+text+"}"
+        s = "\href{" + url + "}{" + text + "}"
     return s
 
 
