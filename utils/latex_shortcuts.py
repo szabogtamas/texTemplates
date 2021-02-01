@@ -3,22 +3,22 @@
 
 
 def chapter(s):
-    return "\n\\chapter*{" + s + "}\n"
-
-def section(s):
-    return "\n\\section*{" + s + "}\n"
-
-def subsection(s):
-    return "\n\\subsection*{" + s + "}\n"
-
-def nchapter(s):
     return "\n\\chapter{" + s + "}\n"
 
-def nsection(s):
+def section(s):
     return "\n\\section{" + s + "}\n"
 
-def nsubsection(s):
+def subsection(s):
     return "\n\\subsection{" + s + "}\n"
+
+def nchapter(s):
+    return "\n\\chapter*{" + s + "}\n"
+
+def nsection(s):
+    return "\n\\section*{" + s + "}\n"
+
+def nsubsection(s):
+    return "\n\\subsection*{" + s + "}\n"
 
 def hiddenToc(s):
     return (
